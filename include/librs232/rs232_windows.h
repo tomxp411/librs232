@@ -33,6 +33,10 @@
 #define CBR_460800 460800
 #endif
 
+#ifndef CBR_921600
+#define CBR_921600 921600
+#endif
+
 struct rs232_windows_t {
 	HANDLE fd;
 	COMMTIMEOUTS old_tm;
