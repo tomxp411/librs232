@@ -536,6 +536,10 @@ rs232_set_baud(struct rs232_port_t *p, enum rs232_baud_e baud)
 		cfsetispeed(&term, B460800);
 		cfsetospeed(&term, B460800);
 		break;
+	case RS232_BAUD_921600:
+		cfsetispeed(&term, B921600);
+		cfsetospeed(&term, B921600);
+		break;
 	default:
 		return RS232_ERR_UNKNOWN;
 	}
