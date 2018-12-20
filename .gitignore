@@ -37,3 +37,7 @@ missing
 Makefile
 libtool
 *.pc
+
+*~
+*.un~
+*.swp

@@ -2,8 +2,8 @@
 
 ## Multiplatform library for serial communications over RS-232 (serial port)
 
-[![Build Status](https://travis-ci.org/moteus/librs232.svg?branch=master)](https://travis-ci.org/moteus/librs232)
-[![Build status](https://ci.appveyor.com/api/projects/status/1h8c8ptms5yne73d?svg=true)](https://ci.appveyor.com/project/moteus/librs232)
+[![Build Status](https://travis-ci.org/srdgame/librs232.svg?branch=master)](https://travis-ci.org/srdgame/librs232)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/srdgame/librs232?branch=master&svg=true)](https://ci.appveyor.com/project/srdgame/librs232)
 
 ## Changes from the original version
 * Windows. Use overlapped IO model.
