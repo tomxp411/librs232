@@ -46,25 +46,25 @@ script:
   - cd $TRAVIS_BUILD_DIR/bindings/lua/test
   - lua -lrs232 -v
   # - lua test_socat.lua
-  - socat -d -d PTY PTY &
-  - socat -d -d PTY PTY &
+  - socat -d -d PTY,link=/tmp/pts_1 PTY,link=/tmp/pts_2 &
+  - socat -d -d PTY,link=/tmp/pts_3 PTY,link=/tmp/pts_4 &
   - sleep 5
   ############################################
-  - lua testsrv.lua /dev/pts/1 /dev/pts/3 > ./testsrv.log &
+  - lua testsrv.lua /tmp/pts_1 /tmp/pts_3 > ./testsrv.log &
   - sleep 5
-  - lua utestcli.lua /dev/pts/2 /dev/pts/4
+  - lua utestcli.lua /tmp/pts_2 /tmp/pts_4
   - tail -100 ./testsrv.log
   - kill -9 $(pidof lua) || echo 'ignore'
   - sleep 5
   ############################################
-  - lua testsrv_rs232.lua /dev/pts/1 /dev/pts/3 > ./testsrv.log &
+  - lua testsrv_rs232.lua /tmp/pts_1 /tmp/pts_3 > ./testsrv.log &
   - sleep 5
-  - lua utestcli_rs232.lua /dev/pts/2 /dev/pts/4
+  - lua utestcli_rs232.lua /tmp/pts_2 /tmp/pts_4
   - tail -100 ./testsrv.log
   - kill -9 $(pidof lua) || echo 'ignore'
   - sleep 5
   ############################################
-  - lua test_gc.lua /dev/pts/1
+  - lua test_gc.lua /tmp/pts_1
 
 before_cache:
   - luarocks remove rs232
