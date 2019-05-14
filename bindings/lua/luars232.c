@@ -128,6 +128,7 @@ static int lua_port_open(lua_State *L)
 	rs232_set_device(p, dev);
 	ret = rs232_open(p);
 	if (ret > RS232_ERR_NOERROR) {
+		rs232_close(p);
 		free(p->pt);
 		free(p);
 		lua_pushinteger(L, ret);

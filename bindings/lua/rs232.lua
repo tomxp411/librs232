@@ -186,6 +186,7 @@ function Port:open()
   ok, ret = self:set(self._opt)
   if not ok then
     self._p:close()
+	self._p = nil
     return nil, err
   end
 
@@ -193,11 +194,12 @@ function Port:open()
 end
 
 function Port:close(...)
-  if not self._p then return end
+  if not self._p then return nil, "Already closed"  end
 
-  self._p:close()
+  local p = self._p
   self._p = nil
-  return 
+
+  return p:close()
 end
 
 function Port:set(port_opt)

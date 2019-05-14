@@ -444,6 +444,8 @@ rs232_open(struct rs232_port_t *p)
 
 	if (tcflush(ux->fd, TCIOFLUSH) < 0) {
 		DBG("tcflush() %d %s\n", errno, strerror(errno))
+		close(ux->fd);
+		ux->fd = 0;
 		return RS232_ERR_CONFIG;
 	}
 
