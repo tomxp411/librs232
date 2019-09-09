@@ -504,6 +504,10 @@ rs232_set_baud(struct rs232_port_t *p, enum rs232_baud_e baud)
 		cfsetispeed(&term, B300);
 		cfsetospeed(&term, B300);
 		break;
+	case RS232_BAUD_600:
+		cfsetispeed(&term, B600);
+		cfsetospeed(&term, B600);
+		break;
 	case RS232_BAUD_2400:
 		cfsetispeed(&term, B2400);
 		cfsetospeed(&term, B2400);
