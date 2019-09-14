@@ -501,6 +501,30 @@ rs232_set_baud(struct rs232_port_t *p, enum rs232_baud_e baud)
 	GET_PORT_STATE(ux->fd, &term)
 
 	switch (baud) {
+	case RS232_BAUD_50:
+		cfsetispeed(&term, B50);
+		cfsetospeed(&term, B50);
+		break;
+	case RS232_BAUD_75:
+		cfsetispeed(&term, B75);
+		cfsetospeed(&term, B75);
+		break;
+	case RS232_BAUD_110:
+		cfsetispeed(&term, B110);
+		cfsetospeed(&term, B110);
+		break;
+	case RS232_BAUD_134:
+		cfsetispeed(&term, B134);
+		cfsetospeed(&term, B134);
+		break;
+	case RS232_BAUD_150:
+		cfsetispeed(&term, B150);
+		cfsetospeed(&term, B150);
+		break;
+	case RS232_BAUD_200:
+		cfsetispeed(&term, B200);
+		cfsetospeed(&term, B200);
+		break;
 	case RS232_BAUD_300:
 		cfsetispeed(&term, B300);
 		cfsetospeed(&term, B300);
@@ -508,6 +532,14 @@ rs232_set_baud(struct rs232_port_t *p, enum rs232_baud_e baud)
 	case RS232_BAUD_600:
 		cfsetispeed(&term, B600);
 		cfsetospeed(&term, B600);
+		break;
+	case RS232_BAUD_1200:
+		cfsetispeed(&term, B1200);
+		cfsetospeed(&term, B1200);
+		break;
+	case RS232_BAUD_1800:
+		cfsetispeed(&term, B1800);
+		cfsetospeed(&term, B1800);
 		break;
 	case RS232_BAUD_2400:
 		cfsetispeed(&term, B2400);

@@ -29,6 +29,30 @@
 
 #include <windows.h>
 
+#ifndef CBR_50
+#define CBR_50 50
+#endif
+
+#ifndef CBR_75
+#define CBR_75 75
+#endif
+
+#ifndef CBR_134
+#define CBR_134 134
+#endif
+
+#ifndef CBR_150
+#define CBR_150 150
+#endif
+
+#ifndef CBR_200
+#define CBR_200 200
+#endif
+
+#ifndef CBR_1800
+#define CBR_1800 1800
+#endif
+
 #ifndef CBR_460800
 #define CBR_460800 460800
 #endif
