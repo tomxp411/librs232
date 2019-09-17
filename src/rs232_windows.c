@@ -880,8 +880,35 @@ rs232_set_baud(struct rs232_port_t *p, enum rs232_baud_e baud)
 	GET_PORT_STATE(wx->fd, &pdcb);
 
 	switch (baud) {
+	case RS232_BAUD_50:
+		pdcb.BaudRate = CBR_50;
+		break;
+	case RS232_BAUD_75:
+		pdcb.BaudRate = CBR_75;
+		break;
+	case RS232_BAUD_110:
+		pdcb.BaudRate = CBR_110;
+		break;
+	case RS232_BAUD_134:
+		pdcb.BaudRate = CBR_134;
+		break;
+	case RS232_BAUD_150:
+		pdcb.BaudRate = CBR_150;
+		break;
+	case RS232_BAUD_200:
+		pdcb.BaudRate = CBR_200;
+		break;
 	case RS232_BAUD_300:
 		pdcb.BaudRate = CBR_300;
+		break;
+	case RS232_BAUD_600:
+		pdcb.BaudRate = CBR_600;
+		break;
+	case RS232_BAUD_1200:
+		pdcb.BaudRate = CBR_1200;
+		break;
+	case RS232_BAUD_1800:
+		pdcb.BaudRate = CBR_1800;
 		break;
 	case RS232_BAUD_2400:
 		pdcb.BaudRate = CBR_2400;
@@ -906,6 +933,9 @@ rs232_set_baud(struct rs232_port_t *p, enum rs232_baud_e baud)
 		break;
 	case RS232_BAUD_460800:
 		pdcb.BaudRate = CBR_460800;
+		break;
+	case RS232_BAUD_921600:
+		pdcb.BaudRate = CBR_921600;
 		break;
 	default:
 		return RS232_ERR_UNKNOWN;
