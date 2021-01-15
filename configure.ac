@@ -22,7 +22,7 @@
 #
 
 AC_PREREQ(2.61)
-AC_INIT([librs232], [1.0.3], [ynezz@true.cz])
+AC_INIT([librs232], [1.0.4], [ynezz@true.cz])
 AM_INIT_AUTOMAKE([1.8 foreign])
 AC_PROG_CC
 AM_PROG_CC_C_O
@@ -41,7 +41,7 @@ AM_CONDITIONAL(ENABLE_DEBUG, test "$ENABLE_DEBUG" == "1")
 # Lua
 
 if test "x$enable_lua" = "xyes" ; then
-    AX_PROG_LUA(5.1, 5.4)
+    AX_PROG_LUA(5.1)
     AX_LUA_HEADERS
     AX_LUA_LIBS
     AC_CONFIG_MACRO_DIR(m4)
